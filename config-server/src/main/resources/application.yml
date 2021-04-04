@@ -1,0 +1,29 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/shyshetxwh/shyshetxwh-config.git
+  #配置rabbitmq
+  rabbitmq:
+    host: 192.168.3.128
+    port: 5672
+    username: guest
+    password: guest
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh  #暴露触发消息总线的地址
